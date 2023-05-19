@@ -45,7 +45,7 @@ function App() {
       </form>
     );
   };
-  return <div>{form()}</div>;
+  return <div className="center">{form()}</div>;
 }
 
 export default App;
