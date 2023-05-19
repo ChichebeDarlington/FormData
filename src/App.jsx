@@ -1,9 +1,12 @@
+// import { useState } from "react";
 import "./App.css";
 
 function App() {
+  // const [image, setImage] = useState([]);
   const onSubmit = (event) => {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
+    formData.append("image", event.target.files[0]);
     // console.log(formData);
     // const email = formData.get("email");
     // const name = formData.get("name");
@@ -16,6 +19,7 @@ function App() {
     if (isEmpty) {
       console.log("Please fill in all data");
     }
+    console.log(data);
     // clear inputs
     // event.currentTarget.reset();
   };
@@ -39,6 +43,12 @@ function App() {
           <label htmlFor="password">Password</label>
           <input type="text" name="password" id="password" />
         </div>
+
+        <div className="form-group">
+          <label htmlFor="file">Password</label>
+          <input type="file" id="file" accept="" name="file" />
+        </div>
+
         <div className="btn">
           <button>Submit</button>
         </div>
